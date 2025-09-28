@@ -186,8 +186,7 @@
 
 <body class="bg-[var(--ivory)] text-[var(--indigo)] alpana-bg">
 
-    <!-- YouTube player for background music -->
-    <div id="youtube-audio" style="position: absolute; top: -9999px; left: -9999px;"></div>
+    <audio id="background-music" src="senhai.mp3" loop></audio>
     
     <button id="mute-toggle" class="fixed bottom-4 right-4 z-50 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg text-xl">
         🔊
@@ -344,77 +343,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        let player;
-        let isMuted = false; // Start with the assumption that music will play.
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube-audio', {
-                height: '0',
-                width: '0',
-                videoId: 'dqRnZWrHhEI', // Bengali Wedding Shehnai
-                playerVars: {
-                    autoplay: 1,
-                    loop: 1,
-                    controls: 0,
-                    showinfo: 0,
-                    modestbranding: 1,
-                    fs: 0,
-                    iv_load_policy: 3,
-                    playlist: 'dqRnZWrHhEI' // Important for looping
-                },
-                events: {
-                    'onReady': onPlayerReady
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            const muteToggle = document.getElementById('mute-toggle');
-            event.target.playVideo();
-            
-            // We try to play unmuted. But browsers might block this.
-            // We'll check in a moment if the browser forced a mute.
-            setTimeout(() => {
-                if (player.isMuted()) {
-                    // If player is muted, it means autoplay with sound failed.
-                    // We need to update our state and UI to reflect reality.
-                    isMuted = true;
-                    muteToggle.textContent = '🔇';
-                    
-                    // Since it's muted, we need user interaction to unmute.
-                    // The function will remove itself after the first interaction.
-                    const unmuteOnFirstInteraction = () => {
-                        if (player && isMuted) { // Double check it's still muted
-                           player.unMute();
-                           isMuted = false;
-                           muteToggle.textContent = '🔊';
-                        }
-                    };
-                    document.body.addEventListener('click', unmuteOnFirstInteraction, { once: true });
-                    document.body.addEventListener('scroll', unmuteOnFirstInteraction, { once: true });
-                    document.body.addEventListener('touchstart', unmuteOnFirstInteraction, { once: true });
-                }
-            }, 1500); // Check after 1.5s to give player time to initialize
-
-            // This toggle works regardless of the initial autoplay state.
-            muteToggle.addEventListener('click', () => {
-                if (isMuted) {
-                    player.unMute();
-                    isMuted = false;
-                    muteToggle.textContent = '🔊';
-                } else {
-                    player.mute();
-                    isMuted = true;
-                    muteToggle.textContent = '🔇';
-                }
-            });
-        }
-        
         document.addEventListener('DOMContentLoaded', () => {
 
             const config = {
@@ -424,6 +352,53 @@
                     phone: "+919876543210"
                 }
             };
+            
+            const audio = document.getElementById('background-music');
+            const muteToggle = document.getElementById('mute-toggle');
+
+            // Function to attempt to play audio
+            const startAudio = () => {
+                const promise = audio.play();
+                if (promise !== undefined) {
+                    promise.then(() => {
+                        // Autoplay with sound started!
+                        muteToggle.textContent = '🔊';
+                        audio.muted = false;
+                    }).catch(error => {
+                        // Autoplay was blocked. Audio is paused.
+                        // We will keep the UI optimistic (showing 'on') and wait for interaction.
+                        muteToggle.textContent = '🔊';
+                        
+                        const enableSoundAndPlay = () => {
+                            audio.play(); // This will now likely succeed.
+                            muteToggle.textContent = '🔊';
+                            audio.muted = false;
+                        };
+                        
+                        document.body.addEventListener('click', enableSoundAndPlay, { once: true });
+                        document.body.addEventListener('scroll', enableSoundAndPlay, { once: true });
+                        document.body.addEventListener('touchstart', enableSoundAndPlay, { once: true });
+                    });
+                }
+            };
+
+            startAudio();
+
+            // Toggle button logic
+            muteToggle.addEventListener('click', () => {
+                if (audio.paused) { 
+                    // If autoplay failed, this is the first interaction to play.
+                     audio.play().then(() => {
+                        audio.muted = false;
+                        muteToggle.textContent = '🔊';
+                     });
+                } else {
+                    // If it's already playing, just toggle mute.
+                    audio.muted = !audio.muted;
+                    muteToggle.textContent = audio.muted ? '🔇' : '🔊';
+                }
+            });
+
 
             const translations = {
                 bn: {

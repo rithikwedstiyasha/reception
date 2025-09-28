@@ -3,4 +3,4 @@
 ✨ ঋত্বিক ও তিয়াশা ✨
 ২৮শে নভেম্বর, ২০২৫
 
-Go to website https://rithikwedstiyasha.github.io/reception
+Go to website https://rithikwedstiyasha.github.io/bou-bhat/

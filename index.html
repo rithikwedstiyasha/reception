@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n-key="meta_title">Rithik & Tiyasha</title>
     <meta name="description"
-        content="Join us to celebrate the wedding of Rithik Pramanik & Tiyasha Roy on 28th November 2025. A heartfelt invitation to a day of joy, tradition, and togetherness."
+        content="Join us to celebrate the wedding of Rithik Pramanik & Tiyasha Roy on 26th November 2025. A heartfelt invitation to a day of joy, tradition, and togetherness."
         data-i18n-key="meta_description">
     <link rel="apple-touch-icon" href="https://placehold.co/180x180/B22222/FFF8F0?text=R%26T">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='65' font-size='50' text-anchor='middle' font-family='serif' fill='%23B22222'>R%26T</text></svg>">
@@ -186,60 +186,8 @@
 
 <body class="bg-[var(--ivory)] text-[var(--indigo)] alpana-bg">
 
-    <div id="youtube-audio" class="absolute hidden"></div>
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        var initialVolume = 100;
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube-audio', {
-                height: '0',
-                width: '0',
-                videoId: 'dqRnZWrHhEI',
-                playerVars: {
-                    autoplay: 1,
-                    loop: 1,
-                    controls: 0,
-                    showinfo: 0,
-                    modestbranding: 1,
-                    fs: 0,
-                    cc_load_policy: 0,
-                    iv_load_policy: 3,
-                    autohide: 1,
-                    disablekb: 1,
-                    playlist: 'dqRnZWrHhEI'
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            player.setVolume(initialVolume);
-            event.target.playVideo();
-            isMuted = false;
-            muteToggle.textContent = '🔊';
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data === YT.PlayerState.ENDED) {
-                player.seekTo(0);
-                player.playVideo();
-            }
-        }
-    </script>
-
-    <button id="mute-toggle"
-        class="no-print fixed bottom-4 right-4 z-50 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg text-xl">
-        🔊
-    </button>
+    <!-- Spotify player for background music -->
+    <iframe style="border-radius:12px; display:none;" src="https://open.spotify.com/embed/album/3UUjkNU9kShEFGrgq9iHnq?utm_source=generator&autoplay=1" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
     <header id="main-header"
         class="no-print sticky top-0 z-40 bg-[var(--ivory)]/80 backdrop-blur-md shadow-sm transition-all duration-300">
@@ -436,10 +384,6 @@
                 { bn: { name: "বধূবরণ (বউ ভাত)", date: "২৮শে নভেম্বর", desc: "নবদম্পতিকে আশীর্বাদ দান ও প্রীতিভোজে অনুষ্ঠানে অংশগ্রহণ করুন।" }, start: "2025-11-28T13:00:00" },
             ];
 
-            let isMuted = false;
-
-            const muteToggle = document.getElementById('mute-toggle');
-
             const populateBengaliText = () => {
                 document.documentElement.lang = 'bn';
                 document.querySelectorAll('[data-i18n-key]').forEach(el => {
@@ -540,27 +484,6 @@
                 }
             };
 
-            const initSoundControl = () => {
-                if (typeof YT === 'undefined' || typeof player === 'undefined') {
-                    console.log("YouTube Player API not ready yet.");
-                    return;
-                }
-
-                muteToggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (!isMuted) {
-                        player.mute();
-                        isMuted = true;
-                        muteToggle.textContent = '🔇';
-                    } else {
-                        player.unMute();
-                        player.setVolume(initialVolume);
-                        isMuted = false;
-                        muteToggle.textContent = '🔊';
-                    }
-                });
-            };
-
             const createFallingPetals = () => {
                 const container = document.getElementById('petal-container');
                 if (!container) return;
@@ -584,7 +507,7 @@
                 }
             };
 
-            const createCalendarFile = () => {
+            const setupCalendarLink = () => {
                 const saveDateBtn = document.getElementById('save-the-date-btn');
                 if (!saveDateBtn) return;
 
@@ -592,37 +515,28 @@
                     title: "Rithik & Tiyasha's Wedding Reception",
                     description: "Join us for the wedding reception (Bodhuboron) of Rithik Pramanik & Tiyasha Roy.",
                     location: "Thakdari Panchayat Road, Action Area I, Newtown, West Bengal 700102",
-                    start: new Date('2025-11-28T13:00:00+05:30'),
-                    end: new Date('2025-11-28T22:00:00+05:30')
+                    // Google Calendar link for an all-day event on Nov 28, 2025
+                    startDate: '20251128',
+                    endDate: '20251129' // The end date is exclusive for all-day events
                 };
 
-                const toICSDate = (date) => date.toISOString().replace(/-|:|\.\d+/g, '');
+                const calendarUrl = [
+                    'https://www.google.com/calendar/render?action=TEMPLATE',
+                    `&text=${encodeURIComponent(event.title)}`,
+                    `&dates=${event.startDate}/${event.endDate}`,
+                    `&details=${encodeURIComponent(event.description)}`,
+                    `&location=${encodeURIComponent(event.location)}`
+                ].join('');
 
-                const icsContent = [
-                    'BEGIN:VCALENDAR',
-                    'VERSION:2.0',
-                    'BEGIN:VEVENT',
-                    `URL:${document.URL}`,
-                    `DTSTART:${toICSDate(event.start)}`,
-                    `DTEND:${toICSDate(event.end)}`,
-                    `SUMMARY:${event.title}`,
-                    `DESCRIPTION:${event.description}`,
-                    `LOCATION:${event.location}`,
-                    'END:VEVENT',
-                    'END:CALENDAR'
-                ].join('\n');
-
-                saveDateBtn.setAttribute('href', `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`);
-                saveDateBtn.setAttribute('download', 'rithik-tiyasha-wedding.ics');
+                saveDateBtn.setAttribute('href', calendarUrl);
+                saveDateBtn.setAttribute('target', '_blank'); // Open in a new tab
             };
 
             populateBengaliText();
             updateCountdown();
             handleScrollAnimations();
             createFallingPetals();
-            createCalendarFile();
-            window.onYouTubeIframeAPIReady_callbacks = window.onYouTubeIframeAPIReady_callbacks || [];
-            window.onYouTubeIframeAPIReady_callbacks.push(initSoundControl);
+            setupCalendarLink();
 
             window.addEventListener('scroll', handleHeaderScroll);
         });
@@ -631,4 +545,3 @@
 </body>
 
 </html>
-

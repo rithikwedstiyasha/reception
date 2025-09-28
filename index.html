@@ -356,46 +356,40 @@
             const audio = document.getElementById('background-music');
             const muteToggle = document.getElementById('mute-toggle');
 
-            // Function to attempt to play audio
-            const startAudio = () => {
-                const promise = audio.play();
-                if (promise !== undefined) {
-                    promise.then(() => {
-                        // Autoplay with sound started!
-                        muteToggle.textContent = '🔊';
-                        audio.muted = false;
-                    }).catch(error => {
-                        // Autoplay was blocked. Audio is paused.
-                        // We will keep the UI optimistic (showing 'on') and wait for interaction.
-                        muteToggle.textContent = '🔊';
-                        
-                        const enableSoundAndPlay = () => {
-                            audio.play(); // This will now likely succeed.
-                            muteToggle.textContent = '🔊';
-                            audio.muted = false;
+            const initializeAudio = () => {
+                // 1. Check saved preference. Default to not muted.
+                const isMuted = localStorage.getItem('musicMuted') === 'true';
+                audio.muted = isMuted;
+                muteToggle.textContent = isMuted ? '🔇' : '🔊';
+                
+                // 2. Try to play the audio.
+                let playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        // Autoplay was prevented. Let's wait for the user to interact.
+                        const playOnFirstInteraction = () => {
+                            // When user interacts, we try playing again.
+                            audio.play();
                         };
-                        
-                        document.body.addEventListener('click', enableSoundAndPlay, { once: true });
-                        document.body.addEventListener('scroll', enableSoundAndPlay, { once: true });
-                        document.body.addEventListener('touchstart', enableSoundAndPlay, { once: true });
+                        document.body.addEventListener('click', playOnFirstInteraction, { once: true });
+                        document.body.addEventListener('scroll', playOnFirstInteraction, { once: true });
+                        document.body.addEventListener('touchstart', playOnFirstInteraction, { once: true });
                     });
                 }
             };
 
-            startAudio();
+            initializeAudio();
 
-            // Toggle button logic
+            // 3. Handle the mute toggle button click.
             muteToggle.addEventListener('click', () => {
-                if (audio.paused) { 
-                    // If autoplay failed, this is the first interaction to play.
-                     audio.play().then(() => {
-                        audio.muted = false;
-                        muteToggle.textContent = '🔊';
-                     });
-                } else {
-                    // If it's already playing, just toggle mute.
-                    audio.muted = !audio.muted;
-                    muteToggle.textContent = audio.muted ? '🔇' : '🔊';
+                const isCurrentlyMuted = !audio.muted; // The new state will be the opposite
+                audio.muted = isCurrentlyMuted;
+                muteToggle.textContent = isCurrentlyMuted ? '🔇' : '🔊';
+                localStorage.setItem('musicMuted', String(isCurrentlyMuted));
+
+                // If audio is paused (due to autoplay block), start it now.
+                if (audio.paused) {
+                    audio.play();
                 }
             });
 

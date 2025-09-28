@@ -190,7 +190,7 @@
     <div id="youtube-audio" style="position: absolute; top: -9999px; left: -9999px;"></div>
     
     <button id="mute-toggle" class="fixed bottom-4 right-4 z-50 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg text-xl">
-        🔇
+        🔊
     </button>
 
     <header id="main-header"
@@ -350,7 +350,7 @@
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
         let player;
-        let isMuted = true;
+        let isMuted = false; // Start with the assumption that music will play.
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('youtube-audio', {
@@ -374,26 +374,39 @@
         }
 
         function onPlayerReady(event) {
-            event.target.mute();
+            const muteToggle = document.getElementById('mute-toggle');
             event.target.playVideo();
             
-            const muteToggle = document.getElementById('mute-toggle');
+            // We try to play unmuted. But browsers might block this.
+            // We'll check in a moment if the browser forced a mute.
+            setTimeout(() => {
+                if (player.isMuted()) {
+                    // If player is muted, it means autoplay with sound failed.
+                    // We need to update our state and UI to reflect reality.
+                    isMuted = true;
+                    muteToggle.textContent = '🔇';
+                    
+                    // Since it's muted, we need user interaction to unmute.
+                    // The function will remove itself after the first interaction.
+                    const unmuteOnFirstInteraction = () => {
+                        if (player && isMuted) { // Double check it's still muted
+                           player.unMute();
+                           isMuted = false;
+                           muteToggle.textContent = '🔊';
+                        }
+                    };
+                    document.body.addEventListener('click', unmuteOnFirstInteraction, { once: true });
+                    document.body.addEventListener('scroll', unmuteOnFirstInteraction, { once: true });
+                    document.body.addEventListener('touchstart', unmuteOnFirstInteraction, { once: true });
+                }
+            }, 1500); // Check after 1.5s to give player time to initialize
 
-            const unmuteAndStart = () => {
-                if (player && typeof player.unMute === 'function') {
+            // This toggle works regardless of the initial autoplay state.
+            muteToggle.addEventListener('click', () => {
+                if (isMuted) {
                     player.unMute();
                     isMuted = false;
                     muteToggle.textContent = '🔊';
-                }
-            };
-
-            document.body.addEventListener('click', unmuteAndStart, { once: true });
-            document.body.addEventListener('scroll', unmuteAndStart, { once: true });
-            document.body.addEventListener('touchstart', unmuteAndStart, { once: true });
-
-            muteToggle.addEventListener('click', () => {
-                if (isMuted) {
-                    unmuteAndStart();
                 } else {
                     player.mute();
                     isMuted = true;

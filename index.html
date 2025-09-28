@@ -181,6 +181,68 @@
                 opacity: 0;
             }
         }
+        
+        .point-animation {
+            display: inline-block;
+            animation: point-right-left 1.2s ease-in-out infinite;
+            margin-left: 0.5rem;
+        }
+
+        @keyframes point-right-left {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(-8px); }
+        }
+
+        /* Animation for the names */
+        .name-part {
+            display: inline-block;
+            opacity: 0;
+            animation-fill-mode: forwards; /* Keep the final state */
+        }
+
+        .name-rithik {
+            animation: slide-in-left 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+        }
+
+        .name-tiyasha {
+            animation: slide-in-right 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+        }
+
+        .name-o {
+            animation: fade-in 1s ease-in 1.7s forwards; /* Delay this one */
+        }
+
+
+        @keyframes slide-in-left {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-right {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -210,8 +272,11 @@
             <div class="relative z-10 p-4">
                 <h2 class="text-lg md:text-2xl text-[var(--paddy-green)]" data-i18n-key="hero_greeting">Join us as we
                     tie the knot</h2>
-                <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold text-[var(--vermilion)] my-4 font-heading" lang="bn">ঋত্বিক
-                    ও তিয়াশা</h1>
+                <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold text-[var(--vermilion)] my-4 font-heading flex items-center justify-center" lang="bn">
+                    <span class="name-part name-rithik">ঋত্বিক</span>
+                    <span class="name-part name-o">&nbsp;ও&nbsp;</span>
+                    <span class="name-part name-tiyasha">তিয়াশা</span>
+                </h1>
                 <div class="bg-[var(--gold)]/20 inline-block px-4 sm:px-6 py-2 rounded-full">
                     <p class="text-xl md:text-3xl text-[var(--indigo)] font-semibold" data-i18n-key="hero_date">26th
                         November 2025</p>
@@ -299,7 +364,7 @@
                     <p class="text-gray-600" data-i18n-key="venue_address">Thakdari Panchayat Road, Action Area I,
                         Newtown, West Bengal 700102</p>
                     <a href="https://www.google.com/maps/search/?api=1&query=Rithik+Xerox+%26+Print+Centre" target="_blank"
-                        class="inline-flex items-center justify-center mt-4 btn bg-gradient-to-r from-red-600 to-yellow-500 text-[var(--ivory)] hover:from-red-700 hover:to-yellow-600" data-i18n-key="venue_directions"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Google_Maps_icon_%282015-2020%29.svg/2048px-Google_Maps_icon_%282015-2020%29.svg.png" class="w-5 h-5 -ml-1 mr-2" alt="Google Maps">Get Directions</a>
+                        class="inline-flex items-center justify-center mt-4 btn bg-gradient-to-r from-red-600 to-yellow-500 text-[var(--ivory)] hover:from-red-700 hover:to-yellow-600" data-i18n-key="venue_directions"></a>
                 </div>
 
                 <div class="mt-12 text-left bg-white/50 p-6 md:p-8 rounded-lg shadow-md">
@@ -402,11 +467,11 @@
                     hero_greeting: "আমাদের বধূবরণ অনুষ্ঠানে আপনাদের সাদর আমন্ত্রণ",
                     hero_date: "২৮শে নভেম্বর ২০২৫",
                     events_title: "অনুষ্ঠানসূচী",
-                    save_the_date: `<svg class="w-5 h-5 -ml-1 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg> ক্যালেন্ডারে যোগ করুন। 👈`,
+                    save_the_date: `<svg class="w-5 h-5 -ml-1 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg> ক্যালেন্ডারে যোগ করুন।<span class="point-animation">👈</span>`,
                     venue_title: "স্থান ও নির্দেশনা",
                     venue_name: "বধূবরণের অনুষ্ঠানস্থল",
                     venue_address: "নিকটবর্তী অবস্থান - থাকদাঁড়ি প্রামানিক পাড়া বাসস্ট্যান্ড, থাকদাঁড়ি, অ্যাকশন এরিয়া I, নিউটাউন, পশ্চিমবঙ্গ ৭০০১০২",
-                    venue_directions: `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Google_Maps_icon_%282015-2020%29.svg/2048px-Google_Maps_icon_%282015-2020%29.svg.png" class="w-5 h-5 -ml-1 mr-2" alt="Google Maps"> গুগল ম্যাপ-এ নির্দেশনা পেতে এখানে ক্লিক করুন 👈`,
+                    venue_directions: `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Google_Maps_icon_%282015-2020%29.svg/2048px-Google_Maps_icon_%282015-2020%29.svg.png" class="w-5 h-5 -ml-1 mr-2" alt="Google Maps"> গুগল ম্যাপ-এ নির্দেশনা পেতে এখানে ক্লিক করুন<span class="point-animation">👈</span>`,
                     how_to_reach_title: "কিভাবে পৌঁছাবেন",
                     from_airport_title: "বিমানবন্দর থেকে (CCU)",
                     from_airport_desc: "প্রায় ১১ কিমি। ৩০-৪০ মিনিটের পথ। সবচেয়ে সহজ উপায় হল একটি প্রি-পেইড ট্যাক্সি বা Uber/Ola বুক করা।",

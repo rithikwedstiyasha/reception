@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title data-i18n-key="meta_title">Rithik & Tiyasha's Wedding | 26th Nov 2025</title>
+    <meta name="title" content="Rithik & Tiyasha's Wedding | 26th Nov 2025" data-i18n-key="meta_title">
+    <meta name="description"
+        content="Join us to celebrate the wedding of Rithik Pramanik & Tiyasha Roy on 26th November 2025. A heartfelt invitation to a day of joy, tradition, and togetherness."
+        data-i18n-key="meta_description">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/"> <!-- Replace with your actual URL -->
+    <meta property="og:title" content="Rithik & Tiyasha's Wedding | 26th Nov 2025" data-i18n-key="meta_title">
+    <meta property="og:description"
+        content="Join us to celebrate the wedding of Rithik Pramanik & Tiyasha Roy on 26th November 2025. A heartfelt invitation to a day of joy, tradition, and togetherness."
+        data-i18n-key="meta_description">
+    <meta property="og:image"
+        content="https://placehold.co/1200x630/FFF8F0/B22222?text=Rithik+%26+Tiyasha%0A26.11.2025">
+    <!-- Replace with your hero image URL -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/"> <!-- Replace with your actual URL -->
+    <meta property="twitter:title" content="Rithik & Tiyasha's Wedding | 26th Nov 2025" data-i18n-key="meta_title">
+    <meta property="twitter:description"
+        content="Join us to celebrate the wedding of Rithik Pramanik & Tiyasha Roy on 26th November 2025. A heartfelt invitation to a day of joy, tradition, and togetherness."
+        data-i18n-key="meta_description">
+    <meta property="twitter:image"
+        content="https://placehold.co/1200x630/FFF8F0/B22222?text=Rithik+%26+Tiyasha%0A26.11.2025">
+    <!-- Replace with your hero image URL -->
+
+    <!-- PWA / Mobile -->
+    <link rel="manifest" href="manifest.json"> <!-- Create manifest.json for PWA -->
+    <meta name="theme-color" content="#FFF8F0">
+    <link rel="apple-touch-icon" href="https://placehold.co/180x180/B22222/FFF8F0?text=R%26A">
+    <!-- Replace with your icon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏵️</text></svg>">
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- UPDATED FONT SELECTION -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&family=Tiro+Bangla:wght@400;700&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "The Wedding of Rithik Pramanik and Tiyasha Roy",
+      "startDate": "2025-11-25T17:00:00+05:30",
+      "endDate": "2025-11-28T15:00:00+05:30",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "The Wedding Venue",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Thakdari Panchayat Road, Action Area I, Newtown",
+          "addressLocality": "Kolkata",
+          "postalCode": "700102",
+          "addressRegion": "West Bengal",
+          "addressCountry": "IN"
+        }
+      },
+      "image": [
+        "https://placehold.co/1200x630/FFF8F0/B22222?text=Rithik+%26+Tiyasha%0A26.11.2025"
+       ],
+      "description": "Join us to celebrate the wedding of Rithik Pramanik & Tiyasha Roy. A day of joy, tradition, and togetherness.",
+      "performer": {
+        "@type": "Person",
+        "name": "Rithik Pramanik & Tiyasha Roy"
+      },
+      "organizer": {
+        "@type": "Person",
+        "name": "Bhubon Mondal"
+      }
+    }
+    </script>
+
+    <style>
+        /* CSS Variables for Theming */
+        :root {
+            --vermilion: #B22222;
+            --gold: #E6B800;
+            --ivory: #FFF8F0;
+            --indigo: #1A1F71;
+            --paddy-green: #2E7D32;
+            --font-heading-en: 'Playfair Display', serif;
+            /* UPDATED BENGALI FONTS */
+            --font-heading-bn: 'Tiro Bangla', serif;
+            --font-body-en: 'Inter', sans-serif;
+            --font-body-bn: 'Hind Siliguri', sans-serif;
+        }
+
+        /* Base Styles */
+        body {
+            background-color: var(--ivory);
+            color: var(--indigo);
+            font-family: var(--font-body-en);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Language Specific Font Application */
+        :lang(bn) h1,
+        :lang(bn) h2,
+        :lang(bn) h3,
+        :lang(bn) .font-heading {
+            font-family: var(--font-heading-bn);
+            font-weight: 700; /* Bolder headings for the new font */
+        }
+
+        :lang(bn),
+        :lang(bn) p,
+        :lang(bn) span,
+        :lang(bn) div,
+        :lang(bn) a,
+        :lang(bn) button {
+            font-family: var(--font-body-bn);
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-heading {
+            font-family: var(--font-heading-en);
+        }
+
+        /* Kantha Stitch Separator */
+        .kantha-separator {
+            width: 100px;
+            height: 2px;
+            background-image: repeating-linear-gradient(135deg, var(--gold), var(--gold) 4px, transparent 4px, transparent 8px);
+            margin: 1.5rem auto;
+        }
+
+        /* Alpana Background Pattern */
+        .alpana-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-48 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z' fill='%23B22222' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1593922373328-95559f0f4a88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            /* Using a relevant placeholder */
+            background-size: cover;
+            background-position: center 70%;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to top, rgba(255, 248, 240, 1) 5%, rgba(255, 248, 240, 0.6) 50%, rgba(255, 248, 240, 1) 95%);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Button Styles */
+        .btn {
+            @apply px-6 py-3 rounded-full font-semibold shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+        }
+
+        .btn-primary {
+            @apply bg-[var(--vermilion)] text-[var(--ivory)] hover:bg-red-800 focus:ring-[var(--vermilion)];
+        }
+
+        .btn-secondary {
+            @apply bg-transparent text-[var(--vermilion)] border-2 border-[var(--vermilion)] hover:bg-red-50 focus:ring-[var(--vermilion)];
+        }
+
+        /* Custom Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal,
+            .btn,
+            *,
+            .petal { /* Disable petal animation as well */
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+        /* Invitation Letter Styling */
+        .invitation-letter {
+            background-color: #FDF5E6;
+            /* Old Lace color for paper feel */
+            /* Subtle paper texture */
+            background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H0L6 0h-1z"/%3E%3C/g%3E%3C/svg%3E');
+            border: 1px solid #E4B484;
+            /* A light brown outer border */
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .invitation-letter-inner {
+            border: 4px double var(--vermilion);
+            padding: 2rem 2.5rem;
+        }
+
+        .invitation-letter h2 {
+            color: var(--vermilion);
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        /* Traditional separator under the heading */
+        .invitation-letter h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            margin: 0.75rem auto 0;
+            background-image: repeating-linear-gradient(-45deg, var(--gold), var(--gold) 4px, transparent 4px, transparent 8px);
+        }
+
+        .invitation-letter p {
+            color: #5C4033;
+            /* Dark brown for text */
+        }
+        .invitation-letter .invitation-body {
+            font-family: var(--font-body-bn);
+        }
+
+        .invitation-letter .text-right p {
+            color: #5C4033;
+        }
+
+        .invitation-letter .italic {
+            font-family: var(--font-body-bn);
+            color: #805533;
+        }
+
+        /* NEW: Falling Petal Animation */
+        .petal {
+            position: absolute;
+            top: -50px; /* Start above the screen */
+            color: var(--vermilion);
+            opacity: 0;
+            animation: fall linear infinite;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg) translateX(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg) translateX(100px); /* Fall past the bottom and sway */
+                opacity: 0;
+            }
+        }
+        
+        /* Print Styles for A5 Invitation */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background-color: var(--ivory);
+                font-size: 10pt;
+                /* A5 readable size */
+            }
+
+            .no-print,
+            nav,
+            #rsvp,
+            #venue-map,
+            #gifts,
+            #info,
+            footer {
+                display: none !important;
+            }
+
+            #printable-invite {
+                display: block !important;
+                width: 148mm;
+                height: 210mm;
+                margin: 0 auto;
+                padding: 15mm;
+                box-shadow: none;
+                border: 2px solid var(--gold);
+                page-break-after: always;
+            }
+
+            #printable-invite h1 {
+                font-size: 24pt;
+                color: var(--vermilion);
+            }
+
+            #printable-invite h2 {
+                font-size: 16pt;
+                color: var(--indigo);
+            }
+
+            #printable-invite p {
+                font-size: 10pt;
+                color: var(--indigo);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[var(--ivory)] text-[var(--indigo)] alpana-bg">
+
+    <!-- YouTube Iframe API for background music -->
+    <div id="youtube-audio" class="absolute hidden"></div>
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        var initialVolume = 100; // Full volume
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-audio', {
+                height: '0',
+                width: '0',
+                videoId: 'dqRnZWrHhEI', // Your YouTube video ID
+                playerVars: {
+                    autoplay: 1, // Autoplay the video
+                    loop: 1,     // Loop the video
+                    controls: 0, // Hide video controls
+                    showinfo: 0, // Hide video information
+                    modestbranding: 1, // No YouTube logo
+                    fs: 0,       // Disable fullscreen button
+                    cc_load_policy: 0, // Hide captions
+                    iv_load_policy: 3, // Hide video annotations
+                    autohide: 1, // Hide video controls after a few seconds
+                    disablekb: 1, // Disable keyboard controls
+                    playlist: 'dqRnZWrHhEI' // For looping a single video
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Set initial volume to full
+            player.setVolume(initialVolume);
+            event.target.playVideo();
+            // Start the audio unmuted
+            isMuted = false;
+            muteToggle.textContent = '🔊';
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                // If the video ends, play it again for seamless looping
+                player.seekTo(0);
+                player.playVideo();
+            }
+        }
+    </script>
+
+
+    <!-- Mute Toggle -->
+    <button id="mute-toggle"
+        class="no-print fixed bottom-4 right-4 z-50 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg text-xl">
+        🔊
+    </button>
+
+    <!-- Header -->
+    <header id="main-header"
+        class="no-print sticky top-0 z-40 bg-[var(--ivory)]/80 backdrop-blur-md shadow-sm transition-all duration-300">
+        <!-- Responsive: Adjusted horizontal padding for mobile -->
+        <nav class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold font-heading text-[var(--vermilion)]" lang="bn">ঋত্বিক ও তিয়াশা</div>
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <a href="#events" class="btn btn-primary text-sm" data-i18n-key="nav_events">Events</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Responsive: Adjusted main container horizontal padding -->
+    <main class="container mx-auto px-4 md:px-6">
+        <!-- Hero Section -->
+        <!-- Responsive: Adjusted top margin for mobile header -->
+        <section id="hero"
+            class="hero-section relative h-[90vh] md:h-screen flex items-center justify-center text-center -mx-4 md:-mx-6 -mt-16 sm:-mt-20">
+            <!-- NEW: Petal Container -->
+            <div id="petal-container" class="absolute inset-0 z-20 overflow-hidden pointer-events-none"></div>
+            <div class="hero-overlay absolute inset-0"></div>
+            <div class="relative z-10 p-4">
+                <!-- Responsive: Adjusted text sizes for mobile -->
+                <h2 class="text-lg md:text-2xl text-[var(--paddy-green)]" data-i18n-key="hero_greeting">Join us as we
+                    tie the knot</h2>
+                <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold text-[var(--vermilion)] my-4 font-heading" lang="bn">ঋত্বিক
+                    ও তিয়াশা</h1>
+                <div class="bg-[var(--gold)]/20 inline-block px-4 sm:px-6 py-2 rounded-full">
+                    <p class="text-xl md:text-3xl text-[var(--indigo)] font-semibold" data-i18n-key="hero_date">26th
+                        November 2025</p>
+                </div>
+                <!-- Responsive: Adjusted countdown text and spacing -->
+                <div id="countdown"
+                    class="mt-6 text-lg md:text-xl text-[var(--indigo)] flex justify-center space-x-2 md:space-x-4">
+                    <!-- Countdown timer will be injected here -->
+                </div>
+                <div class="mt-8">
+                     <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Rithik%20%26%20Tiyasha%27s%20Wedding%20Reception&dates=20251128/20251129&details=Join%20us%20to%20celebrate%20the%20wedding%20reception%20(Bodhuboron)%20of%20Rithik%20Pramanik%20%26%20Tiyasha%20Roy.&location=Thakdari%20Panchayat%20Road%2C%20Action%20Area%20I%2C%20Newtown%2C%20West%20Bengal%20700102" 
+                        target="_blank" 
+                        class="inline-flex items-center justify-center btn btn-secondary" 
+                        data-i18n-key="save_the_date">
+                        <!-- Text will be populated by JS -->
+                    </a>
+                </div>
+            </div>
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+                <svg class="w-8 h-8 text-[var(--vermilion)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Letter Section -->
+        <section id="story" class="py-16 md:py-20">
+            <div lang="bn" class="invitation-letter max-w-3xl mx-auto rounded-lg reveal">
+                <div class="invitation-letter-inner rounded">
+                    <h2 class="text-center font-heading">শ্রী শ্রী প্রজাপতয়ে নমঃ</h2>
+
+                    <p class="mb-4 mt-8 invitation-body">সবিনয় নিবেদন,</p>
+                    <p class="mb-6 invitation-body">মহাশয় / মহাশয়া,</p>
+
+                    <p class="text-justify indent-8 mb-6 leading-loose invitation-body">
+                        ঋষিবর প্রজাপতির আশীর্বাদে মঙ্গলময় ও আনন্দময় মুহূর্তে আমাদের পুত্র কল্যাণীয় ঋত্বিক প্রামানিক
+                        সহিত শ্রীযুক্ত সঞ্জয় প্রামাণিকের কন্যা কল্যাণীয় তিয়াশা প্রামাণিক-র শুভবিবাহ সম্পন্ন হইয়াছে। এই আনন্দময় 
+                        উপলক্ষ্যে আপনাদের সবাইকে 'বধূবরণ' অনুষ্ঠানে সপরিবারে উপস্থিত থেকে নবদম্পতিকে আশীর্বাদ ও 
+                        শুভকামনা জানাতে আন্তরিক আমন্ত্রণ জানাচ্ছি।
+                    </p>
+
+                    <p class="text-justify indent-8 mb-6 leading-loose invitation-body">
+                        ‘বধূবরণ’ অনুষ্ঠানটি আগামী ২৮শে নভেম্বর, ২০২৫ (শুক্রবার) আমাদের নিজস্ব বাসভবন, থাকদাঁড়ি-তে অনুষ্ঠিত হবে।
+                        আপনার শুভাগমন আমাদের জন্য অত্যন্ত আনন্দের হবে। নবদম্পতিকে আশীর্বাদ প্রদান ও প্রীতিভোজে অংশগ্রহণের মাধ্যমে 
+                        অনুষ্ঠানটির মাহাত্ম্য বৃদ্ধি পাবে—এই কামনাই রইল।
+                    </p>
+
+                    <p class="text-justify indent-8 mb-6 leading-loose invitation-body">
+                        আপনার আশীর্বাদ ও শুভেচ্ছা নবদম্পতির ভবিষ্যৎ জীবনকে মধুর ও সমৃদ্ধ করবে।
+                    </p>
+
+                    <p class="text-center my-10 italic invitation-body">পত্রদ্বারা নিমন্ত্রণের ত্রুটি মার্জন করিবেন।</p>
+
+                    <div class="text-right mt-10">
+                        <p class="font-semibold invitation-body">বিনীত,</p>
+                        <p class="invitation-body">শ্রীযুক্ত নিপুল প্রামানিক</p>
+                        <p class="invitation-body">শ্রীমতী মালতী প্রামানিক</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-16 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading"
+                data-i18n-key="events_title">Wedding Events</h2>
+            <div class="kantha-separator reveal"></div>
+            <!-- Responsive: Grid stacks to single column on mobile automatically -->
+            <div class="grid md:grid-cols-2 gap-8 mt-10 max-w-4xl mx-auto">
+                <!-- Event cards will be injected here by JS -->
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section id="venue" class="py-16 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading"
+                data-i18n-key="venue_title">Venue & Directions</h2>
+            <div class="kantha-separator reveal"></div>
+            <div class="mt-10 max-w-5xl mx-auto reveal text-center">
+                <!-- Responsive: Adjusted map height for mobile -->
+                <div id="venue-map" class="w-full h-80 md:h-96 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
+                    <!-- Google Maps iFrame -->
+            
+
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1842.0945916938872!2d88.45073448857075!3d22.572026594873016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027533e645ba9d%3A0xbb521d5e819b2495!2sRithik%20Xerox%20%26%20Print%20Centre!5e0!3m2!1sen!2sin!4v1758970231356!5m2!1sen!2sin"
+                          width="100%" 
+                         height="100%" 
+                         style="border:0;" 
+                         allowfullscreen="" 
+                         loading="lazy" 
+                         referrerpolicy="no-referrer-when-downgrade">
+                     </iframe>
+                </div>
+                <div class="mt-6">
+                    <p class="text-2xl font-semibold font-heading" data-i18n-key="venue_name">The Wedding Venue</p>
+                    <p class="text-gray-600" data-i18n-key="venue_address">Thakdari Panchayat Road, Action Area I,
+                        Newtown, West Bengal 700102</p>
+                    <a href="https://maps.app.goo.gl/Yx8m52pr23LfsKgQ9" target="_blank"
+                        class="inline-flex items-center justify-center mt-4 btn btn-secondary" data-i18n-key="venue_directions">Get Directions</a>
+                </div>
+
+                <!-- Responsive: Adjusted padding for mobile -->
+                <div class="mt-12 text-left bg-white/50 p-6 md:p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-center mb-6 font-heading" data-i18n-key="how_to_reach_title">How
+                        to Reach</h3>
+                    <!-- Responsive: Grid stacks to single column on mobile automatically -->
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-[var(--vermilion)]" data-i18n-key="from_airport_title">
+                                From Airport (CCU)</h4>
+                            <p class="mt-1 text-gray-700" data-i18n-key="from_airport_desc">Approx. 11 km. A 30-40
+                                minute drive. The easiest way is to take a pre-paid taxi or book a ride via Uber/Ola.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[var(--vermilion)]"
+                                data-i18n-key="from_biswa_bangla_title">From Biswa Bangla Gate</h4>
+                            <p class="mt-1 text-gray-700" data-i18n-key="from_biswa_bangla_desc">Just 2.5 km away. A
+                                quick 5-10 minute ride by auto-rickshaw or cab.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[var(--vermilion)]"
+                                data-i18n-key="from_bidhannagar_title">From Bidhannagar Station</h4>
+                            <p class="mt-1 text-gray-700" data-i18n-key="from_bidhannagar_desc">Around 10 km. A taxi or
+                                app-based cab is recommended and will take about 35-45 minutes depending on traffic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="no-print bg-white/40 mt-20 py-10 text-center">
+        <div class="container mx-auto px-6">
+            <h3 class="text-2xl font-bold text-[var(--vermilion)] font-heading">Rithik & Tiyasha</h3>
+            <p class="my-2" data-i18n-key="footer_thank_you">Thank you for being a part of our special day!</p>
+            <p class="text-xs text-gray-500 mt-8" data-i18n-key="footer_copyright">&copy; 2025 Rithik & Tiyasha's
+                Wedding. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Printable Invite (Hidden by default) -->
+    <div id="printable-invite" class="hidden">
+        <div class="text-center">
+            <h1 class="font-heading" data-i18n-key="printable_title">Together with their families</h1>
+            <p class="mt-4 text-xl" data-i18n-key="printable_invite_you">joyfully invite you to celebrate the wedding of
+            </p>
+            <h2 class="text-5xl my-6 font-heading">Rithik Pramanik</h2>
+            <p class="text-2xl">&</p>
+            <h2 class="text-5xl my-6 font-heading">Tiyasha Roy</h2>
+            <p class="mt-8 text-xl" data-i18n-key="hero_date">26th November 2025</p>
+            <p class="mt-2 text-lg" data-i18n-key="printable_time">Ceremony at 07:00 PM, Reception to follow.</p>
+            <p class="mt-6 font-semibold" data-i18n-key="venue_name">The Wedding Venue</p>
+            <p data-i18n-key="venue_address">Thakdari Panchayat Road, Action Area I, Newtown, West Bengal 700102</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- CONFIGURATION ---
+            const config = {
+                weddingDate: '2025-11-28T13:00:00+05:30',
+                contact: {
+                    host: "Bhubon Mondal",
+                    phone: "+919876543210"
+                }
+            };
+
+            // --- I18N TRANSLATIONS ---
+            const translations = {
+                bn: {
+                    meta_title: "ঋত্বিক ও তিয়াশার বধূবরণ অনুষ্ঠান",
+                    meta_description: "২৮শে নভেম্বর ২০২৫-এ ঋত্বিক প্রামাণিক এবং তিয়াশা রায়ের প্রীতিভোজ অনুষ্ঠানে আমাদের সাথে যোগ দিন। আনন্দ, ঐতিহ্য এবং একতার একটি দিনে আন্তরিক আমন্ত্রণ।",
+                    nav_events: "অনুষ্ঠান সময়সূচিতে যান",
+                    hero_greeting: "আমাদের বধূবরণ অনুষ্ঠানে আপনাদের সাদর আমন্ত্রণ",
+                    hero_date: "২৮শে নভেম্বর ২০২৫",
+                    events_title: "অনুষ্ঠানসূচী",
+                    save_the_date: `<svg class="w-5 h-5 -ml-1 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg> ক্যালেন্ডারে যোগ করুন। 👈`,
+                    venue_title: "স্থান ও নির্দেশনা",
+                    venue_name: "বধূবরণের অনুষ্ঠানস্থল",
+                    venue_address: "নিকটবর্তী অবস্থান - থাকদাঁড়ি প্রামানিক পাড়া বাসস্ট্যান্ড, থাকদাঁড়ি, অ্যাকশন এরিয়া I, নিউটাউন, পশ্চিমবঙ্গ ৭০০১০২",
+                    venue_directions: `<svg class="w-5 h-5 -ml-1 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 20l-4.95-6.05a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg> গুগল ম্যাপ-এ নির্দেশনা পেতে এখানে ক্লিক করুন 👈`,
+                    how_to_reach_title: "কিভাবে পৌঁছাবেন",
+                    from_airport_title: "বিমানবন্দর থেকে (CCU)",
+                    from_airport_desc: "প্রায় ১১ কিমি। ৩০-৪০ মিনিটের পথ। সবচেয়ে সহজ উপায় হল একটি প্রি-পেইড ট্যাক্সি বা Uber/Ola বুক করা।",
+                    from_biswa_bangla_title: "বিশ্ব বাংলা গেট থেকে",
+                    from_biswa_bangla_desc: "মাত্র ২.৫ কিমি দূরে। অটো-রিকশা বা টোটো ৫-১০ মিনিটের রাস্তা।",
+                    from_bidhannagar_title: "হাওড়া স্টেশন বা শিয়ালদহ স্টেশন এবং বিধাননগর স্টেশন থেকে",
+                    from_bidhannagar_desc: "12C/2 বাস ধরে নামুন থাকদাঁড়ি প্রামানিক পাড়া বাসস্ট্যান্ড।",
+                    footer_thank_you: "আমাদের বিশেষ দিনে অংশ হওয়ার জন্য অগ্রিম ধন্যবাদ!",
+                    footer_copyright: "&copy; ২০২৫ ঋত্বিক ও তিয়াশার বিবাহ। সর্বস্বত্ব সংরক্ষিত।",
+                    countdown_days: "দিন",
+                    countdown_hours: "ঘন্টা",
+                    countdown_mins: "মিনিট",
+                    countdown_secs: "সেকেন্ড",
+                    printable_title: "তাদের পরিবারের সাথে",
+                    printable_invite_you: "আপনাকে আনন্দের সাথে আমন্ত্রণ জানাচ্ছে",
+                    printable_time: "অনুষ্ঠান সন্ধ্যা ৭:০০ মিনিটে, এরপর রিসেপশন।"
+                }
+            };
+
+            // --- WEDDING EVENTS DATA ---
+            const eventsData = [
+                { bn: { name: "শুভবিবাহ (বিয়ে)", date: "২৬শে নভেম্বর", desc: "সাত পাক এবং সিঁদুর দানের মতো পবিত্র বিবাহের আচার অনুষ্ঠানে অংশগ্রহণ করুন।" }, start: "2025-11-26T19:00:00" },
+                { bn: { name: "বধূবরণ (বউ ভাত)", date: "২৮শে নভেম্বর", desc: "নবদম্পতিকে আশীর্বাদ দান ও প্রীতিভোজে অনুষ্ঠানে অংশগ্রহণ করুন।" }, start: "2025-11-28T13:00:00" },
+            ];
+
+            // --- STATE ---
+            let isMuted = false; // Changed to false to reflect full volume by default
+
+            // --- SELECTORS ---
+            const muteToggle = document.getElementById('mute-toggle');
+
+
+            // --- FUNCTIONS ---
+
+            const populateBengaliText = () => {
+                document.documentElement.lang = 'bn';
+                document.querySelectorAll('[data-i18n-key]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-key');
+                    if (translations.bn && translations.bn[key]) {
+                        el.innerHTML = translations.bn[key];
+                    }
+                });
+                renderEvents();
+            };
+
+            const renderEvents = () => {
+                const container = document.getElementById('events').querySelector('.grid');
+                container.innerHTML = '';
+                eventsData.forEach(event => {
+                    const langData = event.bn;
+                    const card = document.createElement('div');
+                    card.className = 'reveal bg-white/50 p-6 rounded-lg shadow-md text-center flex flex-col min-h-[260px]';
+                    card.innerHTML = `
+                <div class="bg-yellow-100 text-yellow-800 font-bold text-sm inline-block px-3 py-1 rounded-full mb-3 self-center">${langData.date}</div>
+                <h3 class="text-2xl font-bold text-[var(--vermilion)] font-heading">${langData.name}</h3>
+                <p class="text-gray-600 grow mt-2">${langData.desc}</p>
+            `;
+                    container.appendChild(card);
+                });
+                // Re-run animation observer for new elements
+                handleScrollAnimations();
+            };
+
+            const updateCountdown = () => {
+                const countdownEl = document.getElementById('countdown');
+                if (!countdownEl) return;
+                const weddingTime = new Date(config.weddingDate).getTime();
+
+                const interval = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = weddingTime - now;
+
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        countdownEl.innerHTML = `<div class="text-2xl font-bold text-[var(--vermilion)]">বিবাহ সম্পন্ন হয়েছে!</div>`;
+                        const jsConfetti = new JSConfetti();
+                        jsConfetti.addConfetti({
+                            emojis: ['🎉', '🎊', '💖', '✨', '🏵️'],
+                            confettiNumber: 100,
+                        });
+                        return;
+                    }
+
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    const t = translations.bn;
+                    // Responsive: Adjusted countdown text size via JS for dynamic content
+                    countdownEl.innerHTML = `
+                <div class="px-2">
+                    <span class="text-2xl md:text-3xl font-bold">${days}</span>
+                    <span class="block text-xs uppercase">${t.countdown_days}</span>
+                </div>
+                <div class="px-2">
+                    <span class="text-2xl md:text-3xl font-bold">${hours}</span>
+                    <span class="block text-xs uppercase">${t.countdown_hours}</span>
+                </div>
+                <div class="px-2">
+                    <span class="text-2xl md:text-3xl font-bold">${minutes}</span>
+                    <span class="block text-xs uppercase">${t.countdown_mins}</span>
+                </div>
+                <div class="px-2">
+                    <span class="text-2xl md:text-3xl font-bold">${seconds}</span>
+                    <span class="block text-xs uppercase">${t.countdown_secs}</span>
+                </div>
+            `;
+                }, 1000);
+            };
+
+            const handleScrollAnimations = () => {
+                const revealElements = document.querySelectorAll('.reveal:not(.visible)');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                revealElements.forEach(el => observer.observe(el));
+            };
+
+            const handleHeaderScroll = () => {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-3');
+                } else {
+                    header.classList.add('py-3');
+                    header.classList.remove('py-2');
+                }
+            };
+
+            const initSoundControl = () => {
+                // Ensure player is defined before trying to control it
+                if (typeof YT === 'undefined' || typeof player === 'undefined') {
+                    console.log("YouTube Player API not ready yet.");
+                    return;
+                }
+
+                muteToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (!isMuted) {
+                        player.mute();
+                        isMuted = true;
+                        muteToggle.textContent = '🔇';
+                    } else {
+                        player.unMute();
+                        player.setVolume(initialVolume); // Restore to initial full volume
+                        isMuted = false;
+                        muteToggle.textContent = '🔊';
+                    }
+                });
+            };
+
+            // --- NEW: Function to create falling petals ---
+            const createFallingPetals = () => {
+                const container = document.getElementById('petal-container');
+                if (!container) return;
+                const petalCount = 30; // Number of petals
+                const petalIcon = '🏵️'; // Using a rosette emoji for a flower feel
+
+                for (let i = 0; i < petalCount; i++) {
+                    const petal = document.createElement('div');
+                    petal.className = 'petal';
+                    petal.innerHTML = petalIcon;
+
+                    // Randomize properties for a natural effect
+                    petal.style.left = `${Math.random() * 100}vw`;
+                    petal.style.animationDuration = `${Math.random() * 5 + 7}s`; // Duration between 7s and 12s
+                    petal.style.animationDelay = `${Math.random() * 5}s`; // Start at different times
+                    petal.style.fontSize = `${Math.random() * 1 + 1}rem`; // Random size between 1rem and 2rem
+                    
+                    // Add a slight horizontal sway variation to the animation
+                    const sway = Math.random() > 0.5 ? '' : '-';
+                    petal.style.animationName = 'fall';
+                    
+                    container.appendChild(petal);
+                }
+            };
+
+
+            // --- INITIALIZATION ---
+            populateBengaliText();
+            updateCountdown();
+            handleScrollAnimations();
+            createFallingPetals(); // Call the new function
+            // Call initSoundControl after onYouTubeIframeAPIReady has fired and player is ready
+            // The onPlayerReady function will ensure correct initial state.
+            window.onYouTubeIframeAPIReady_callbacks = window.onYouTubeIframeAPIReady_callbacks || [];
+            window.onYouTubeIframeAPIReady_callbacks.push(initSoundControl);
+
+            // --- EVENT LISTENERS ---
+            window.addEventListener('scroll', handleHeaderScroll);
+        });
+    </script>
+
+</body>
+
+</html>

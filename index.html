@@ -243,6 +243,36 @@
                 opacity: 1;
             }
         }
+        
+        /* Custom styles for the responsive iframes */
+        .drive-embed-container, .form-embed-container {
+            position: relative;
+            max-width: 100%;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            overflow: hidden;
+        }
+        
+        .drive-embed-container {
+            padding-bottom: 75%; /* 4:3 Aspect Ratio for photos */
+            height: 0;
+        }
+        
+        .form-embed-container {
+            /* Set a fixed height or min-height for the form iframe,
+               as forms don't always scale well with padding-bottom */
+            min-height: 70vh; /* Adjust as needed */
+            height: auto;
+        }
+
+        .drive-embed-container iframe, .form-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 
@@ -395,6 +425,27 @@
             </div>
         </section>
 
+        <!-- Music Request Section -->
+        <section id="music-request" class="py-16 md:py-20 ">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading" data-i18n-key="music_title">Request a Song</h2>
+            <div class="kantha-separator reveal"></div>
+            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-10 reveal" data-i18n-key="music_desc">
+                You can directly request your favorite song using the embedded form below. We're building a playlist with our favorite people's favorite tunes!
+            </p>
+            <div class="mt-10 max-w-3xl mx-auto reveal">
+                <div class="form-embed-container bg-white/50">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSfsmeCRgW4XpqHxp0mgmAFsgh0jVeMrrqzJmnan0to9W0vQMw/viewform?embedded=true"
+                        allowfullscreen="true"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Song Request Form">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        <!-- End Music Request Section -->
+
         <!-- Photo Upload Section -->
         <section id="photo-upload" class="py-16 md:py-20">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading" data-i18n-key="photo_title">Share Your Memories</h2>
@@ -413,21 +464,33 @@
         </section>
         <!-- End Photo Upload Section -->
 
-        <!-- Music Request Section -->
-        <section id="music-request" class="py-16 md:py-20 ">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading" data-i18n-key="music_title">Request a Song</h2>
+        <!-- Photo Gallery Snapshot Section -->
+        <section id="photo-gallery" class="py-16 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading" data-i18n-key="gallery_title">Photo Gallery Snapshot</h2>
             <div class="kantha-separator reveal"></div>
-            <p class="text-center max-w-2xl mx-auto text-gray-600 mb-10 reveal" data-i18n-key="music_desc">
-                Got a song that will get you on the dance floor? Let us know! We're building a playlist with our favorite people's favorite tunes.
+            <p class="text-center max-w-2xl mx-auto text-gray-600 mb-10 reveal" data-i18n-key="gallery_desc">
+                Check out the latest photos uploaded by our guests in a public view below.
+                <br class="hidden sm:block">
+                **IMPORTANT:** This view requires your Google Drive folder to be set to "Anyone with the link can view."
             </p>
-            <div class="mt-10 max-w-3xl mx-auto reveal text-center">
-                <a href="https://forms.gle/EMg1JcwZoraxubDRA" target="_blank" class="inline-flex items-center btn btn-primary text-lg" data-i18n-key="music_button_text">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" /></svg>
-                    Request a Song Now!
-                </a>
+            <div class="mt-10 max-w-4xl mx-auto reveal">
+                <div class="drive-embed-container">
+                    <!-- 
+                        Google Drive Folder Embed. The ID has been set to the public folder ID provided by the user.
+                        The URL uses the 'embeddedfolderview' endpoint with the '#grid' parameter for a thumbnail view.
+                    -->
+                    <iframe 
+                        src="https://drive.google.com/embeddedfolderview?id=1nZanKjZzAqg5o9U59u22tFuc3U1Npt7W#grid"
+                        allowfullscreen="true"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Google Drive Photo Gallery Snapshot">
+                    </iframe>
+                </div>
             </div>
         </section>
-        <!-- End Music Request Section -->
+        <!-- End Photo Gallery Snapshot Section -->
+
 
     </main>
 
@@ -522,9 +585,10 @@
                     photo_title: "আপনার স্মৃতি শেয়ার করুন",
                     photo_desc: "আমাদের বিশেষ দিনের সমস্ত সুন্দর মুহূর্ত সংগ্রহ করতে আমাদের সাহায্য করুন! অনুগ্রহ করে আপনার তোলা যেকোনো ছবি আমাদের শেয়ার করা গুগল ড্রাইভ ফোল্ডারে আপলোড করুন।",
                     photo_button_text: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg> ছবি আপলোড করতে এখানে ক্লিক করুন <span class="point-animation">👈</span>',
+                    gallery_title: "ছবির গ্যালারি স্ন্যাপশট",
+                    gallery_desc: "নীচে অতিথিদের দ্বারা আপলোড করা সাম্প্রতিক ফটোগুলি দেখুন।<br class=\"hidden sm:block\">**গুরুত্বপূর্ণ:** এই ভিউ কাজ করার জন্য Google ড্রাইভ ফোল্ডারে 'Anyone with the link can view' সেট করা আবশ্যক।",
                     music_title: "গানের অনুরোধ করুন",
-                    music_desc: "এমন কোনো গান আছে যা আপনি চান বধূবরণ অনুষ্ঠানে চালানো হোক? আমাদের জানান! আমরা আমাদের প্রিয় মানুষদের পছন্দের গান দিয়ে একটি প্লেলিস্ট তৈরি করছি।",
-                    music_button_text: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" /></svg> গানের অনুরোধ করতে এখানে ক্লিক করুন <span class="point-animation">👈</span>'
+                    music_desc: "আপনি নিচে দেওয়া ফর্মে আপনার পছন্দের গান সরাসরি অনুরোধ করতে পারেন। আমরা আমাদের প্রিয় মানুষদের পছন্দের গান দিয়ে একটি প্লেলিস্ট তৈরি করছি।",
                 }
             };
 
@@ -694,4 +758,3 @@
 </body>
 
 </html>
-

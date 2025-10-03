@@ -350,7 +350,7 @@
             <div class="mt-10 max-w-5xl mx-auto reveal text-center">
                 <div id="venue-map" class="w-full h-80 md:h-96 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1842.0945916938872!2d88.45073448857075!3d22.572026594873016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027533e645ba9d%3A0xbb52d5e819b2495!2sRithik%20Xerox%20%26%20Print%20Centre!5e0!3m2!1sen!2sin!4v1758970231356!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1777248905314!2d88.45112147493714!3d22.572455279491788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027533e645ba9d%3A0xbb521d5e819b2495!2sRithik%20Xerox%20%26%20Print%20Centre!5e0!3m2!1sen!2sin!4v1759484050574!5m2!1sen!2sin"
                           width="100%"
                          height="100%"
                          style="border:0;"
@@ -394,6 +394,40 @@
                 </div>
             </div>
         </section>
+
+        <!-- Photo Upload Section -->
+        <section id="photo-upload" class="py-16 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading" data-i18n-key="photo_title">Share Your Memories</h2>
+            <div class="kantha-separator reveal"></div>
+            <p class="text-center max-w-2xl mx-auto text-gray-600 mb-10 reveal" data-i18n-key="photo_desc">
+                Help us collect all the beautiful moments from our special day! Please upload any photos you've taken to our shared Google Drive folder.
+            </p>
+            <div class="mt-10 max-w-3xl mx-auto reveal text-center">
+                <a href="https://drive.google.com/drive/folders/1nZanKjZzAqg5o9U59u22tFuc3U1Npt7W?usp=sharing" target="_blank" class="inline-flex items-center btn btn-primary text-lg" data-i18n-key="photo_button_text">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Upload Photos
+                </a>
+            </div>
+        </section>
+        <!-- End Photo Upload Section -->
+
+        <!-- Music Request Section -->
+        <section id="music-request" class="py-16 md:py-20 ">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--indigo)] reveal font-heading" data-i18n-key="music_title">Request a Song</h2>
+            <div class="kantha-separator reveal"></div>
+            <p class="text-center max-w-2xl mx-auto text-gray-600 mb-10 reveal" data-i18n-key="music_desc">
+                Got a song that will get you on the dance floor? Let us know! We're building a playlist with our favorite people's favorite tunes.
+            </p>
+            <div class="mt-10 max-w-3xl mx-auto reveal text-center">
+                <a href="https://forms.gle/EMg1JcwZoraxubDRA" target="_blank" class="inline-flex items-center btn btn-primary text-lg" data-i18n-key="music_button_text">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" /></svg>
+                    Request a Song Now!
+                </a>
+            </div>
+        </section>
+        <!-- End Music Request Section -->
 
     </main>
 
@@ -463,7 +497,7 @@
                 bn: {
                     meta_title: "ঋত্বিক ও তিয়াশার বধূবরণ অনুষ্ঠান",
                     meta_description: "২৮শে নভেম্বর ২০২৫-এ ঋত্বিক প্রামাণিক এবং তিয়াশা প্রামাণিকের প্রীতিভোজ অনুষ্ঠানে আমাদের সাথে যোগ দিন। আনন্দ, ঐতিহ্য এবং একতার একটি দিনে আন্তরিক আমন্ত্রণ।",
-                    nav_events: "অনুষ্ঠান সময়সূচিতে যান",
+                    nav_events: "ক্লিক করে অনুষ্ঠান সময়সূচিতে যান",
                     hero_greeting: "আমাদের বধূবরণ অনুষ্ঠানে আপনাদের সাদর আমন্ত্রণ",
                     hero_date: "২৮শে নভেম্বর ২০২৫",
                     events_title: "অনুষ্ঠানসূচী",
@@ -485,6 +519,12 @@
                     countdown_hours: "ঘন্টা",
                     countdown_mins: "মিনিট",
                     countdown_secs: "সেকেন্ড",
+                    photo_title: "আপনার স্মৃতি শেয়ার করুন",
+                    photo_desc: "আমাদের বিশেষ দিনের সমস্ত সুন্দর মুহূর্ত সংগ্রহ করতে আমাদের সাহায্য করুন! অনুগ্রহ করে আপনার তোলা যেকোনো ছবি আমাদের শেয়ার করা গুগল ড্রাইভ ফোল্ডারে আপলোড করুন।",
+                    photo_button_text: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg> ছবি আপলোড করতে এখানে ক্লিক করুন <span class="point-animation">👈</span>',
+                    music_title: "গানের অনুরোধ করুন",
+                    music_desc: "এমন কোনো গান আছে যা আপনি চান বধূবরণ অনুষ্ঠানে চালানো হোক? আমাদের জানান! আমরা আমাদের প্রিয় মানুষদের পছন্দের গান দিয়ে একটি প্লেলিস্ট তৈরি করছি।",
+                    music_button_text: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" /></svg> গানের অনুরোধ করতে এখানে ক্লিক করুন <span class="point-animation">👈</span>'
                 }
             };
 
